@@ -1,0 +1,16 @@
+Package: shinyXYpad
+Type: Package
+Title: XY Controller for Shiny
+Version: 0.1.0
+Date: 2019-05-21
+Author: Stéphane Laurent
+Maintainer: Stéphane Laurent <laurent_step@yahoo.fr>
+Description: Provide an XY pad input for Shiny.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: shiny
+URL: https://github.com/stla/shinyXYpad
+BugReports: https://github.com/stla/shinyXYpad/issues
+RoxygenNote: 6.1.1
+
