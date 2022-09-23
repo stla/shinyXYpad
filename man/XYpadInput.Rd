@@ -4,13 +4,31 @@
 \alias{XYpadInput}
 \title{XY pad controller}
 \usage{
-XYpadInput(inputId, label = NULL, value = list(x = 50, y = 50),
-  xmin = 0, xmax = 100, ymin = 0, ymax = 100, ndecimals = 2,
-  width = 200, height = 200, bgColor = "rgba(255,240,230,0.5)",
-  xyColor = "blue", xySize = 11, xyStyle = "italic",
-  coordsColor = xyColor, pointColor = "#16235a", pointRadius = 5,
-  border = "2px solid #777CA8", x = "x", y = "y",
-  displayPrevious = TRUE, displayXY = TRUE, onMove = FALSE)
+XYpadInput(
+  inputId,
+  label = NULL,
+  value = list(x = 50, y = 50),
+  xmin = 0,
+  xmax = 100,
+  ymin = 0,
+  ymax = 100,
+  ndecimals = 2,
+  width = 200,
+  height = 200,
+  bgColor = "rgba(255,240,230,0.5)",
+  xyColor = "blue",
+  xySize = 11,
+  xyStyle = "italic",
+  coordsColor = xyColor,
+  pointColor = "#16235a",
+  pointRadius = 5,
+  border = "2px solid #777CA8",
+  x = "x",
+  y = "y",
+  displayPrevious = TRUE,
+  displayXY = TRUE,
+  onMove = FALSE
+)
 }
 \arguments{
 \item{inputId}{the input slot that will be used to access the value}
@@ -25,9 +43,9 @@ XYpadInput(inputId, label = NULL, value = list(x = 50, y = 50),
 
 \item{ndecimals}{number of decimals of the displayed coordinates (if \code{displayXY=TRUE})}
 
-\item{width}{width in pixels}
+\item{width}{a positive number, the width in pixels}
 
-\item{height}{height in pixels}
+\item{height}{a positive number, the height in pixels}
 
 \item{bgColor}{background color, a HTML color}
 
@@ -54,34 +72,45 @@ XYpadInput(inputId, label = NULL, value = list(x = 50, y = 50),
 
 \item{displayXY}{logical, whether to display the coordinates}
 
-\item{onMove}{logical, whether to send value to server on mouse move}
+\item{onMove}{logical, whether to send value to server on mouse move
+(\code{TRUE}) or on mouse release (\code{FALSE})}
 }
 \value{
-A XY pad input control that can be added to a UI definition.
+A \code{shiny.tag.list} object generating a XY pad input control that
+  can be added to a Shiny UI definition.
 }
 \description{
-Create a XY pad controller.
+Creates a XY pad controller to be included in a Shiny UI.
 }
 \examples{
-if(interactive()){
 library(shiny)
 library(shinyXYpad)
 ui <- fluidPage(
   fluidRow(
-    column(6, XYpadInput("xy1", onMove = TRUE, label = "XY pad")),
-    column(6, XYpadInput("xy2", label = "XY pad", displayXY = FALSE,
-                         displayPrevious = FALSE))
+    column(
+      6,
+      XYpadInput("xy1", onMove = TRUE, label = "XY pad - on move")
+    ),
+    column(
+      6,
+      XYpadInput(
+        "xy2", label = "XY pad - on release",
+        displayXY = FALSE, displayPrevious = FALSE
+      )
+    )
   ),
   fluidRow(
     column(6, verbatimTextOutput("xy1value")),
     column(6, verbatimTextOutput("xy2value"))
   )
 )
-server <- function(input, output){
+server <- function(input, output, session){
   output[["xy1value"]] <- renderPrint({ input[["xy1"]] })
   output[["xy2value"]] <- renderPrint({ input[["xy2"]] })
 }
-shinyApp(ui, server)
+
+if(interactive()){
+  shinyApp(ui, server)
 }
 }
 \seealso{

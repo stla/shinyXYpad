@@ -4,13 +4,23 @@
 \alias{updateXYpadInput}
 \title{Change a XY pad input on the client}
 \usage{
-updateXYpadInput(session, inputId, label = NULL, value = NULL,
-  xmin = NULL, xmax = NULL, ymin = NULL, ymax = NULL,
-  ndecimals = NULL, bgColor = NULL, pointColor = NULL,
-  pointRadius = NULL)
+updateXYpadInput(
+  session,
+  inputId,
+  label = NULL,
+  value = NULL,
+  xmin = NULL,
+  xmax = NULL,
+  ymin = NULL,
+  ymax = NULL,
+  ndecimals = NULL,
+  bgColor = NULL,
+  pointColor = NULL,
+  pointRadius = NULL
+)
 }
 \arguments{
-\item{session}{session object passed to function given to shinyServer}
+\item{session}{session object passed to the Shiny server function}
 
 \item{inputId}{id of the XY pad input}
 
@@ -35,10 +45,9 @@ updateXYpadInput(session, inputId, label = NULL, value = NULL,
 \item{pointRadius}{new \code{pointRadius}, or \code{NULL} for no change}
 }
 \description{
-Change a XY pad input on the client.
+Changes a XY pad input on the client.
 }
 \examples{
-if(interactive()){
 library(shiny)
 library(shinyXYpad)
 ui <- fluidPage(
@@ -57,6 +66,8 @@ server <- function(input, output, session){
                      pointRadius = 10, ndecimals = 3)
   })
 }
-shinyApp(ui, server)
+
+if(interactive()){
+  shinyApp(ui, server)
 }
 }
