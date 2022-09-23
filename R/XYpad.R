@@ -9,7 +9,8 @@
 #' @param ndecimals number of decimals of the displayed coordinates (if \code{displayXY=TRUE})
 #' @param width a positive number, the width in pixels
 #' @param height a positive number, the height in pixels
-#' @param bgColor background color, a HTML color
+#' @param bgColor background color, a HTML color; you have to set some transparency
+#'   in order to see the coordinates
 #' @param xyColor color of the labels of the coordinates (if \code{displayXY=TRUE}), a HTML color
 #' @param xySize font size of the labels of the coordinates (if \code{displayXY=TRUE})
 #' @param xyStyle font style of the labels of the coordinates (if \code{displayXY=TRUE}),
@@ -64,7 +65,7 @@
 XYpadInput <- function(inputId, label = NULL, value = list(x=50, y=50),
                        xmin=0, xmax=100, ymin=0, ymax=100, ndecimals = 2,
                        width = 200, height = 200,
-                       bgColor = "rgba(255,240,230,0.5)",
+                       bgColor = "rgba(255,200,200,0.2)",
                        xyColor = "blue", xySize = 11, xyStyle = "italic",
                        coordsColor = xyColor,
                        pointColor = "#16235a", pointRadius = 5,

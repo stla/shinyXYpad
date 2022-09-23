@@ -15,7 +15,7 @@ XYpadInput(
   ndecimals = 2,
   width = 200,
   height = 200,
-  bgColor = "rgba(255,240,230,0.5)",
+  bgColor = "rgba(255,200,200,0.2)",
   xyColor = "blue",
   xySize = 11,
   xyStyle = "italic",
@@ -47,7 +47,8 @@ XYpadInput(
 
 \item{height}{a positive number, the height in pixels}
 
-\item{bgColor}{background color, a HTML color}
+\item{bgColor}{background color, a HTML color; you have to set some transparency
+in order to see the coordinates}
 
 \item{xyColor}{color of the labels of the coordinates (if \code{displayXY=TRUE}), a HTML color}
 
