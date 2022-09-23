@@ -72,6 +72,8 @@ XYpadInput <- function(inputId, label = NULL, value = list(x=50, y=50),
                        x = "x", y = "y",
                        displayPrevious = TRUE,
                        displayXY = TRUE, onMove = FALSE) {
+  stopifnot(is.numeric(width))
+  stopifnot(is.numeric(height))
   if(is.null(names(value)) || !identical(sort(names(value)), c("x","y"))){
     names(value) <- c("x","y")
   }
