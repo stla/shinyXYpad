@@ -44,6 +44,9 @@ updateXYpadInput(
 
 \item{pointRadius}{new \code{pointRadius}, or \code{NULL} for no change}
 }
+\value{
+No value is returned, called for side-effect.
+}
 \description{
 Changes a XY pad input on the client.
 }

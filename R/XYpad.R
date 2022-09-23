@@ -138,6 +138,8 @@ XYpadInput <- function(inputId, label = NULL, value = list(x=50, y=50),
 #' @param pointColor new \code{pointColor}, or \code{NULL} for no change
 #' @param pointRadius new \code{pointRadius}, or \code{NULL} for no change
 #'
+#' @return No value is returned, called for side-effect.
+#'
 #' @export
 #'
 #' @examples
