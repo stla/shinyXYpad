@@ -1,3 +1,3 @@
-# shinyXYpad 0.1.0
+# shinyXYpad 0.2.0
 
 First release.

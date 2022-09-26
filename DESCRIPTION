@@ -1,13 +1,13 @@
 Package: shinyXYpad
 Type: Package
 Title: XY Controller for 'Shiny'
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Stéphane", "Laurent", email = "laurent_step@outlook.fr", role = c("aut", "cre")),
     person("Anthony", "Terrien", role = "cph", comment = "'jqueryKontrol library'")
   )
 Maintainer: Stéphane Laurent <laurent_step@outlook.fr>
-Description: Provides an XY pad input for 'shiny'. An XY pad is like a bivariate slider. It allows to pick up a pair of numbers.
+Description: Provides an XY pad input for the 'Shiny' framework. An XY pad is like a bivariate slider. It allows to pick up a pair of numbers.
 License: GPL-3
 Encoding: UTF-8
 Imports: shiny
